@@ -1,6 +1,9 @@
 <?php
 
 function listeHTML($titre, $liste) {
+    $html = '';
+
+
     
     return $html;
 }
