@@ -2,15 +2,10 @@
 
 // stocke les données envoyées par l'utilisateur dans la base de donnée
 
+require_once("templates/header.html");
+
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form</title>
-</head>
-<body>
+
         <form method="post">
         <input type="text" placeholder="nom" name="nom" ><br/>
         <input type="text" placeholder="prenom" name="prenom"><br/>
@@ -28,4 +23,6 @@
         <legend>J'accepte les conditions d'utilisations</legend>
         <input type="checkbox" name="J'accepte les conditions d'utilisations" value="J'accepte les conditions d'utilisations" /><br/>
         <input type="submit" value="Envoyer le formulaire" />
-</html>
+        
+<?php
+require_once("templates/footer.html");

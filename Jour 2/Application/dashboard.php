@@ -1,12 +1,10 @@
 <?php
 session_start();
-if (!isset($_SESSION['connected'])) {
-    header('location: connection.php');
-}
+
+require_once("functions.php");
+
+require_once("templates/header.html");
 ?>
-<html>
-    <head></head>
-    <body>
         <h1>Bienvenue sur votre tableau de bord !</h1>
         <a href="logout.php">Déconnexion</a>
 
@@ -16,3 +14,6 @@ if (!isset($_SESSION['connected'])) {
 
     </body>
 </html>
+
+<?php
+require_once("templates/footer.html");

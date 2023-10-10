@@ -15,14 +15,13 @@ session_start();
         }
     }
 
+require_once("templates/header.html");
 ?>
-<html>
-    <head></head>
-    <body>
         <form method="post">
             <input type="email" name="email" placeholder="Email">
             <input type="password" name="password" placeholder="Password">
             <input type="submit" value="Send">
         </form>
-    </body>
-</html>
+
+<?php
+require_once("templates/footer.html");
