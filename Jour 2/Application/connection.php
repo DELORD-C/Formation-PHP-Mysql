@@ -1,5 +1,7 @@
 <?php
 
+require_once('functions.php');
+
 session_start();
 
     if (isset($_SESSION['connected'])) {
@@ -9,15 +11,14 @@ session_start();
     if (!empty($_POST)) { //La variable $_POST est-elle vide ?
         if (isset($_POST['email']) && isset($_POST['password'])) { // Les données attendues ont-elles bien été envoyées ?
 
-            $connexion = new PDO('mysql:host=localhost;dbname=php', 'root', '');
-            $requete = $connexion->prepare("SELECT * FROM users WHERE email = :mail");
-            $requete->bindParam(':mail', $_POST['email']);
-            $requete->execute();
-            $resultat = $requete->fetch(PDO::FETCH_ASSOC);
+            $resultat = requete(
+                "SELECT * FROM users WHERE email = :mail",
+                [":mail" => $_POST['email']]
+            );
 
             if ($resultat) {
-                if ($resultat['password'] == $_POST['password']) {
-                    $_SESSION['connected'] = $resultat['id'];
+                if ($resultat[0]['password'] == $_POST['password']) {
+                    $_SESSION['connected'] = $resultat[0]['id'];
                     header('location: dashboard.php');
                 }
             }

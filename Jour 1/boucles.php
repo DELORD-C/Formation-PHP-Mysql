@@ -45,3 +45,86 @@ $fruits = [
 sort($fruits);
 
 var_dump($fruits);
+
+
+
+
+////////////////////////////////////////////
+////////////////////////////////////////////
+////////////////////////////////////////////
+////////////////////////////////////////////
+////////////////////////////////////////////
+
+
+$fruits = [
+    
+];
+
+$fruits = [
+    [
+        'Banane',
+        'Kiwi',
+        'Framboise',
+        'Fraise',
+        'Pomme',
+        'Poire'
+    ],
+    [
+        'Jaune',
+        'Vert',
+        'Rouge',
+        'Rouge',
+        'Verte',
+        'Jaune'
+    ],
+    [
+        'Moyen',
+        'Moyen petit',
+        'Petit',
+        'Petit',
+        'Moyen',
+        'Moyen'
+    ]
+];
+
+$fruits = [
+    [
+        'Nom' => 'Banane',
+        'Couleur' => 'Jaune',
+        'Taille' => 'Moyen'
+    ],
+    [
+        'Nom' => 'Banane',
+        'Couleur' => 'Jaune',
+        'Taille' => 'Moyen'
+    ],
+    [
+        'Nom' => 'Banane',
+        'Couleur' => 'Jaune',
+        'Taille' => 'Moyen'
+    ],
+    [
+        'Nom' => 'Banane',
+        'Couleur' => 'Jaune',
+        'Taille' => 'Moyen'
+    ],
+    [
+        'Nom' => 'Banane',
+        'Couleur' => 'Jaune',
+        'Taille' => 'Moyen'
+    ]
+];
+
+// Même chose :
+// $fruits = [
+//     0 => 'Banane',
+//     1 => 'Kiwi',
+//     2 => 'Framboise',
+//     3 => 'Fraise',
+//     4 => ['Pomme Verte','Pomme Rouge'],
+//     5 => 'Poire'
+// ];
+
+foreach ($fruits as $index => $valeur) {
+    echo $valeur;
+}

@@ -2,6 +2,7 @@
 session_start();
 
 require_once("functions.php");
+redirect_user_if_not_connected();
 
 require_once("templates/header.html");
 ?>

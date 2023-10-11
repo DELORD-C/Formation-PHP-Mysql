@@ -2,10 +2,15 @@
 session_start();
 
 require_once("functions.php");
+redirect_user_if_not_connected();
 
-$connexion = new PDO('mysql:host=localhost;dbname=php', 'root', '');
-$requete = $connexion->prepare("DELETE FROM users WHERE id = :id");
-$requete->bindParam(":id", $_GET['user']);
-$requete->execute();
+if (!isset($_GET['user'])) {
+    header('location: users.php');
+}
+
+requete(
+    "DELETE FROM users WHERE id = :id",
+    [":id" => $_GET['user']]
+);
 
 header('location: users.php');

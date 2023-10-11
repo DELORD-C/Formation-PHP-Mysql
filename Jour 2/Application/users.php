@@ -2,15 +2,14 @@
 session_start();
 
 require_once("functions.php");
+redirect_user_if_not_connected();
+
 
 require_once("templates/header.html");
 ?>
         <h1>Liste des utilisateurs</h1>
         <?php
-            $connexion = new PDO('mysql:host=localhost;dbname=php', 'root', '');
-            $requete = $connexion->prepare("SELECT * FROM users");
-            $requete->execute();
-            $users = $requete->fetchAll(PDO::FETCH_ASSOC);
+            $users = requete("SELECT * FROM users");
         ?>
 
         <table>
